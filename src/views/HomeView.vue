@@ -44,7 +44,7 @@ const transactionBarItems = computed(() => mainStore.history)
 <template>
   <LayoutAuthenticated>
     <SectionMain>
-      <SectionTitleLineWithButton :icon="mdiChartTimelineVariant" title="Overview Of me" main>
+      <SectionTitleLineWithButton :icon="mdiChartTimelineVariant" title="Overview Of LOVE " main>
         <BaseButton
           href="https://github.com/justboil/admin-one-vue-tailwind"
           target="_blank"
