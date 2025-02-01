@@ -4,10 +4,8 @@ on:
   push:
     branches: [master]
 
-  workflow_dispatch:
-
 jobs:
-  build:
+  buildAndDeploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,3 +22,11 @@ jobs:
 
       - name: Build Vue app
         run: npm run build
+
+      - name: Upload to Server
+        run: |
+          ssudo apt install lftp -y
+          lftp -u ftpuser,1234 ftp://3.27.245.131 <<EOF
+          mirror -R dist www/web-1
+          bye
+          EOF
